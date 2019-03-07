@@ -4,7 +4,7 @@
 #
 Name     : R-ps
 Version  : 1.3.0
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Summary  : List, Query, Manipulate System Processes
