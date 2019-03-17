@@ -4,19 +4,35 @@
 #
 Name     : R-ps
 Version  : 1.3.0
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Summary  : List, Query, Manipulate System Processes
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-ps-lib = %{version}-%{release}
-Requires: R-rlang
+Requires: R-assertthat
+BuildRequires : R-assertthat
+BuildRequires : R-cli
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
-'Linux' and 'macOS'.
+# ps
+> List, Query, Manipulate System
+Processes
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Travis build
+status](https://travis-ci.org/r-lib/ps.svg?branch=master)](https://travis-ci.org/r-lib/ps)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/r-lib/ps?branch=master&svg=true)](https://ci.appveyor.com/project/gaborcsardi/ps)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ps)](https://cran.r-project.org/package=ps)
+[![CRAN RStudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/ps)](https://www.r-pkg.org/pkg/ps)
+[![Coverage
+status](https://codecov.io/gh/r-lib/ps/branch/master/graph/badge.svg)](https://codecov.io/github/r-lib/ps?branch=master)
 
 %package lib
 Summary: lib components for the R-ps package.
@@ -34,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1545426261
+export SOURCE_DATE_EPOCH=1552838634
 
 %install
-export SOURCE_DATE_EPOCH=1545426261
+export SOURCE_DATE_EPOCH=1552838634
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -73,8 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library ps|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  ps || :
 
 
 %files
@@ -103,7 +118,21 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/ps/html/00Index.html
 /usr/lib64/R/library/ps/html/R.css
 /usr/lib64/R/library/ps/internals.md
-/usr/lib64/R/library/ps/libs/symbols.rds
+/usr/lib64/R/library/ps/tests/testthat.R
+/usr/lib64/R/library/ps/tests/testthat/helpers.R
+/usr/lib64/R/library/ps/tests/testthat/test-cleanup-reporter.R
+/usr/lib64/R/library/ps/tests/testthat/test-common.R
+/usr/lib64/R/library/ps/tests/testthat/test-connections.R
+/usr/lib64/R/library/ps/tests/testthat/test-finished.R
+/usr/lib64/R/library/ps/tests/testthat/test-kill-tree.R
+/usr/lib64/R/library/ps/tests/testthat/test-linux.R
+/usr/lib64/R/library/ps/tests/testthat/test-macos.R
+/usr/lib64/R/library/ps/tests/testthat/test-pid-reuse.R
+/usr/lib64/R/library/ps/tests/testthat/test-posix-zombie.R
+/usr/lib64/R/library/ps/tests/testthat/test-posix.R
+/usr/lib64/R/library/ps/tests/testthat/test-system.R
+/usr/lib64/R/library/ps/tests/testthat/test-utils.R
+/usr/lib64/R/library/ps/tests/testthat/test-windows.R
 
 %files lib
 %defattr(-,root,root,-)

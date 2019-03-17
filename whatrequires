@@ -3,4 +3,5 @@ R-pkgbuild
 R-processx
 R-rcmdcheck
 R-rstan
+R-rstanarm
 R-xopen
