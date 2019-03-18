@@ -4,4 +4,5 @@ R-processx
 R-rcmdcheck
 R-rstan
 R-rstanarm
+R-shinystan
 R-xopen

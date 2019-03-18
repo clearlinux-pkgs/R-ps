@@ -4,14 +4,13 @@
 #
 Name     : R-ps
 Version  : 1.3.0
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Summary  : List, Query, Manipulate System Processes
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-ps-lib = %{version}-%{release}
-Requires: R-assertthat
 BuildRequires : R-assertthat
 BuildRequires : R-cli
 BuildRequires : R-rlang
@@ -50,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552838634
+export SOURCE_DATE_EPOCH=1552873349
 
 %install
-export SOURCE_DATE_EPOCH=1552838634
+export SOURCE_DATE_EPOCH=1552873349
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
