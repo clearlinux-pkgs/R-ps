@@ -4,7 +4,7 @@
 #
 Name     : R-ps
 Version  : 1.3.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.3.0.tar.gz
 Summary  : List, Query, Manipulate System Processes
@@ -16,6 +16,7 @@ BuildRequires : R-cli
 BuildRequires : R-rlang
 BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # ps
@@ -48,13 +49,13 @@ lib components for the R-ps package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552873349
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571879818
 
 %install
-export SOURCE_DATE_EPOCH=1552873349
+export SOURCE_DATE_EPOCH=1571879818
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -83,12 +84,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  ps || :
+R CMD check --no-manual --no-examples --no-codoc ps || :
 
 
 %files

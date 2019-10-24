@@ -1,8 +1,2 @@
 # This file contains recursive sources that require this package
-R-pkgbuild
 R-processx
-R-rcmdcheck
-R-rstan
-R-rstanarm
-R-shinystan
-R-xopen
