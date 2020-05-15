@@ -4,7 +4,7 @@
 #
 Name     : R-ps
 Version  : 1.3.3
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/ps_1.3.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.3.3.tar.gz
 Summary  : List, Query, Manipulate System Processes
@@ -33,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589221789
+export SOURCE_DATE_EPOCH=1589508735
 
 %install
-export SOURCE_DATE_EPOCH=1589221789
+export SOURCE_DATE_EPOCH=1589508735
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
