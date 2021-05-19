@@ -4,7 +4,7 @@
 #
 Name     : R-ps
 Version  : 1.6.0
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/ps_1.6.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ps_1.6.0.tar.gz
 Summary  : List, Query, Manipulate System Processes
