@@ -4,14 +4,15 @@
 # Using build pattern: R
 #
 Name     : R-ps
-Version  : 1.7.4
-Release  : 50
-URL      : https://cran.r-project.org/src/contrib/ps_1.7.4.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/ps_1.7.4.tar.gz
+Version  : 1.7.5
+Release  : 51
+URL      : https://cran.r-project.org/src/contrib/ps_1.7.5.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/ps_1.7.5.tar.gz
 Summary  : List, Query, Manipulate System Processes
 Group    : Development/Tools
 License  : MIT
 Requires: R-ps-lib = %{version}-%{release}
+BuildRequires : R-webfakes
 BuildRequires : buildreq-R
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -36,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680554098
+export SOURCE_DATE_EPOCH=1681921037
 
 %install
-export SOURCE_DATE_EPOCH=1680554098
+export SOURCE_DATE_EPOCH=1681921037
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
